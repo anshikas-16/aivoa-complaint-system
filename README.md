@@ -2,7 +2,7 @@
 
 Round 1 take-home: AI Product Engineer (Interns). Pharmaceutical (API/FDF) customer
 complaint intake, built with the mandated stack:
-**React + Redux · FastAPI · LangGraph · Groq (gemma2-9b-it) · Google Inter font**
+**React + Redux · FastAPI · LangGraph · Groq (openai/gpt-oss-120b) · Google Inter font**
 
 ---
 
@@ -58,8 +58,8 @@ Human reviews/edits → Save → stored in DB → shown in Complaint Log table
 ```
 
 Each node is one Groq call (`backend/agents/groq_client.py`), forced to return
-structured JSON via `response_format={"type": "json_object"}`, with automatic
-fallback from `gemma2-9b-it` to `llama-3.3-70b-versatile` if the first model errors.
+structured JSON via `response_format={"type": "json_object"}`, with automatic 
+fallback from `openai/gpt-oss-120b` to `openai/gpt-oss-20b`
 
 **Bonus AI features implemented** (all "free" — same LLM calls, extra fields):
 completeness checker, root cause hint, CAPA recommendation, AI summary,
